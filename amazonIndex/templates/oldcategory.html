@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ search_tag }} -- 搜索结果</title>
+</head>
+
+<style type="text/css">
+.layout {
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	width: 100%;
+	margin: 0px;
+}
+#top {
+	height: 140px;
+}
+#logo {
+	height: 35px;
+	background-color: #333333;
+	color: #FFFFFF;
+	text-align: left;
+	padding-left: 10px;
+	position: relative;
+	font-size: medium;
+	line-height: 36px;
+}
+#bottom {
+	background-color: #CCCCCC;
+	position: absolute;
+	width: 100%;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+#cataContainer {
+	background-color: #013773;
+	margin-top: 1px;
+	color: #FFFFFF;
+	height: 70px;
+}
+#catagory {
+	height: auto;
+	text-align: center;
+	padding-top: 23px;
+}
+.cataChooser {
+	width: 150px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+#sortSearch {
+	background-color: #0099CC;
+	margin-top: 1px;
+	height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+#sortContainer {
+	padding-top: 5px;
+	width: 50%;
+	float: left;
+}
+.sortWay {
+	margin-left: 15px;
+	color: #FFFFFF;
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+}
+#searchContainer {
+	padding-top: 5px;
+	width: 50%;
+	float: left;
+}
+#center {
+}
+
+.result {
+	height: 70px;
+	background-color: #D6D6D6;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding-top: 10px;
+	padding-left: 10%;
+	padding-bottom: 10px;
+	color: #000000;
+	text-decoration: none;
+}
+.commoditypic {
+	width: 70px;
+	height: 70px;
+	background-color: #FFFFFF;
+	float: left;
+}
+.nametag {
+	float: left;
+	margin-left: 30px;
+	width: 30%;
+	height: 70px;
+}
+.commodityname {
+	font-weight: bold;
+	margin-top: 2px;
+}
+.commoditytag {
+	margin-top: 7px;
+}
+.commodityprice {
+	width: 150px;
+	float: left;
+	margin-left: 3%;
+	margin-top: 23px;
+}
+.commoditysales {
+	width: 150px;
+	float: left;
+	margin-left: 3%;
+	margin-top: 23px;
+}
+.commoditystars {
+	width: 160px;
+	float: left;
+	height: 70px;
+	margin-left: 5%;
+}
+.starpicbk {
+	background-image: url(star_bk.png);
+	height: 50px;
+}
+.starpic {
+	background-image: url(star.png);
+	height: 50px;
+}
+.starnum {
+	text-align: center;
+}
+</style>
+
+<body style="margin: 0px;">
+<div class="layout" id="top">
+<div class="layout" id="logo"><b>Amazon Index</b></div>
+<div class="layout" id="cataContainer">
+  <div class="content" id="catagory">
+  Catagory:
+  <select class="cataChooser" id="cata1"> 
+  <option value ="aaaaa">aaaaa</option>
+  <option value ="bbbbb">bbbbb</option>
+  <option value="ccccc">ccccc</option>
+  <option value="ddddd">ddddd</option>
+  </select>
+  >>
+  <select class="cataChooser" id="cata2"> 
+  <option value ="aaaaa">aaaaa</option>
+  <option value ="bbbbb">bbbbb</option>
+  <option value="ccccc">ccccc</option>
+  <option value="ddddd">ddddd</option>
+  </select>
+  >>
+  <select class="cataChooser" id="cata3"> 
+  <option value ="aaaaa">aaaaa</option>
+  <option value ="bbbbb">bbbbb</option>
+  <option value="ccccc">ccccc</option>
+  <option value="ddddd">ddddd</option>
+  </select>
+  </div>
+</div>
+<div class="layout" id="sortSearch">
+<div class="content" id="sortContainer">Sorted by: <a class="sortWay" href="#">Name</a><a class="sortWay" href="#">Sales</a><a class="sortWay" href="#">Price</a><a class="sortWay" href="#">Stars</a></div>
+<div id="searchContainer">Search:<input type="searchtf" style="position: relative; margin-top: -1px; width: 150px; margin-left: 10px;">
+</div>
+</div>
+</div>
+<div class="layout" id="center">
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+  <a href="http://www.baidu.com" target="_blank">
+  <div class="result" id="result1">
+    <div class="commoditypic">PICTURE</div>
+    <div class="nametag">
+     <div class="commodityname">Commodity Name cccccccccccccccccccccccc</div>
+     <div class="commoditytag">TAG: Shoes</div>
+    </div>
+    <div class="commodityprice">Price: $500</div>
+    <div class="commoditysales">Sales: 100</div>
+    <div class="commoditystars">
+     <div class="starpicbk">
+      <div class="starpic" style="width: 138px"></div>
+     </div>
+     <div class="starnum">Star: 4.5</div>
+    </div>
+  </div>
+  </a>
+</div>
+
+<div class="layout" id="bottom">
+<p style="text-align: center; color: #666666;">Designed by HouseWang Team, Supported by Trendata</p> </div>
+</body>
+</html>
