@@ -1,12 +1,10 @@
 from django.conf.urls import patterns, include, url
-
-from django.contrib import admin
-admin.autodiscover()
+from Amazon_Index.views import *
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'Amazon_Index.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$',index),
+    url(r'^category/$', category),
+    url(r'^commodity/$', commodity),
+    url(r'^hello/$',hello),
+    url(r'^meta/$',meta),
 )

@@ -2,10 +2,10 @@
 Django settings for Amazon_Index project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
+https://docs.djangoproject.com/en/dev/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -14,10 +14,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k0#n0vb33rtk-3u@odax3@qb=t^m9&m6j19ffgwwgq5b$@#8)i'
+SECRET_KEY = 'e5!&zoj=3p&yjq15j!kftqvhnafl^ux_n)m&_noea)=t99h-d@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pagination',
+    'amazon',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -43,8 +45,18 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pagination.middleware.PaginationMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
 )
 
 ROOT_URLCONF = 'Amazon_Index.urls'
@@ -53,7 +65,7 @@ WSGI_APPLICATION = 'Amazon_Index.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -63,7 +75,7 @@ DATABASES = {
 }
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+# https://docs.djangoproject.com/en/dev/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -77,6 +89,16 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+# https://docs.djangoproject.com/en/dev/howto/static-files/
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),  
+    ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ), 
+    ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ), 
+    ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ), 
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__),'templates').replace('\\','/'),
+)
