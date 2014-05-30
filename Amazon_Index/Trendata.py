@@ -90,13 +90,13 @@ def get_avg_price(data):
         for info in offer['info']:
             if info['seller']['name'] == 'Null':
                 price = info['price']
-                if type(price) != float:
+                if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
                 l += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
             else:
                 price = info['price']
-                if type(price) != float:
+                if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
                 l += [
@@ -175,13 +175,13 @@ def get_latest_price(data):
         for info in offer['info']:
             if info['seller']['name'] == 'Null':
                 price = info['price']
-                if not type(price) == float:
+                if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
                 list += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
             else:
                 price = info['price']
-                if not type(price) == float:
+                if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
                 list += [
