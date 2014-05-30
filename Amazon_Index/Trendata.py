@@ -35,16 +35,16 @@ def get_category_asin_list(cate):
     """
     count_target_url = '/'.join([ROOT_URL, CATEGORY_URL, 'count'])
     count_target_url = '/?'.join([count_target_url, urllib.urlencode({'category_name': cate})])
-    print count_target_url
+    #print count_target_url
     count_data = json.loads(urllib.urlopen(count_target_url).read())
     count = count_data['count']
-    print count
+    #print count
     category_asin_list = []
-    for i in range(0, int(count/20)):
+    for i in range(0, int(count / 20)):
         target_url = '/'.join([ROOT_URL, CATEGORY_URL])
         target_url = '?'.join([target_url, urllib.urlencode({'category_name': cate})])
         target_url = '&'.join([target_url, urllib.urlencode({'page': i, 'field': r"['ASIN']"})])
-        print target_url
+        #print target_url
         asin_data = json.loads(urllib.urlopen(target_url).read())
         for asin_info in asin_data:
             category_asin_list += [asin_info['ASIN']]
@@ -57,7 +57,7 @@ def get_commodity_data(asin):
     """
     target_url = '/'.join([ROOT_URL, CATEGORY_URL, asin])
     print "## Fetching commodity_info ## " + target_url
-    return json.loads(urllib.urlopen(target_url).read())
+    return json.loads(urllib.urlopen(target_url).read().replace('$', ''))
 
 
 def get_category_top_sales_asin_list(cate, top_count):
@@ -84,30 +84,30 @@ def get_avg_price(data):
     """
     得到一个商品的历史平均价格
     """
-    list = []
+    l = []
     # 提取整体价格数据
     for offer in data['offer']:
         for info in offer['info']:
             if info['seller']['name'] == 'Null':
                 price = info['price']
-                if type(price) == str:
+                if type(price) != float:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
-                list += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
+                l += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
             else:
                 price = info['price']
-                if type(price) == str:
+                if type(price) != float:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
-                list += [
+                l += [
                     [info['seller']['name'], float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
-    print list
-    list = sorted(list, key=lambda e: e[2], reverse=False)
+    #print list
+    l = sorted(l, key=lambda e: e[2], reverse=False)
 
     # 按照商家分类(时间合并)
     seller_list = []
     seller_price_dict = {}
-    for item in list:
+    for item in l:
         if item[0] not in seller_list:
             seller_list += [item[0]]
     for seller in seller_list:
@@ -115,7 +115,7 @@ def get_avg_price(data):
         tmptime = None
         tmpsumprice = 0
         tmpcount = 0
-        for item in list:
+        for item in l:
             if item[0] == seller:
                 #如果时间和上次相同
                 if item[2] == tmptime:
@@ -139,21 +139,21 @@ def get_avg_price(data):
     for seller in seller_list:
         # 时间加权，计算一个商家的平均售价
         current_price_list = seller_price_dict[seller]
-        print current_price_list
+        #print current_price_list
         i = 0
         sum = 0
         if len(current_price_list) > 2:
             while i < len(current_price_list) - 2:
                 sum += current_price_list[i][1] * (current_price_list[i + 1][2] - current_price_list[i][2]).seconds
-                i = i + 1
-            print sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds
+                i += 1
+            #print sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds
             total_price_list += [
                 sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds]
         elif len(current_price_list) == 2:
-            print (current_price_list[0][1] + current_price_list[1][1]) / 2
+            #print (current_price_list[0][1] + current_price_list[1][1]) / 2
             total_price_list += [(current_price_list[0][1] + current_price_list[1][1]) / 2]
         else:
-            print current_price_list[0][1]
+            #print current_price_list[0][1]
             total_price_list += [current_price_list[0][1]]
 
     sum = 0
@@ -162,10 +162,36 @@ def get_avg_price(data):
     if len(total_price_list) != 0:
         avg = sum / len(total_price_list)
     else:
-        print "Error Occured"
+        print "Error: No Price"
         return 0
     print "Average: " + str(avg)
     return avg
+
+
+def get_latest_price(data):
+    l = []
+    # 提取整体价格数据
+    for offer in data['offer']:
+        for info in offer['info']:
+            if info['seller']['name'] == 'Null':
+                price = info['price']
+                if not type(price) == float:
+                    price = price.replace('$', '')
+                    price = price.replace(',', '')
+                list += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
+            else:
+                price = info['price']
+                if not type(price) == float:
+                    price = price.replace('$', '')
+                    price = price.replace(',', '')
+                list += [
+                    [info['seller']['name'], float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
+    l = sorted(l, key=lambda e: e[2], reverse=False)
+    if l:
+        return l[-1][1]
+    else:
+        print "Error: No Price"
+        return 0
 
 
 if __name__ == '__main__':
@@ -183,7 +209,7 @@ if __name__ == '__main__':
             path = "/media/shin/WXPPt/trendata/" + str(index) + "/"
             if not os.path.exists(path):
                 os.mkdir(path)
-            file_object = open(path + asin +'.txt', 'w')
+            file_object = open(path + asin + '.txt', 'w')
             file_object.write(data)
             file_object.close()
         index += 1
