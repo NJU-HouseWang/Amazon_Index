@@ -169,6 +169,9 @@ def get_avg_price(data):
 
 
 if __name__ == '__main__':
+    cate = 'Baby Products>Diapering>Diaper Bags'
+    print get_category_asin_list(cate)
+    '''
     cate_list = get_category_list()
     cate_list.sort()
     index = 9
@@ -187,7 +190,7 @@ if __name__ == '__main__':
             file_object.write(data)
             file_object.close()
         index += 1
-    '''
+
     file_obj = open('/media/shin/WXPPt/trendata/0/' + asin_list[0] +'.txt', 'r')
     d = json.loads(file_obj.read())
     file_obj.close()
