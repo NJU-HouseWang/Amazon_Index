@@ -59,9 +59,17 @@ def category(request):
         return HttpResponse(message)
 
 def commodity(request):
+    t = get_template('commodity.html')
     html = "error"
     if 'asin' in request.GET:
-        html = "You are at commodity " + request.GET['asin']
+        asin = request.GET['asin']
+        data = Trendata.get_commodity_data(asin)
+        info = CommodityLogic.get_commodity_info(data)
+        star_count = CommodityLogic.get_star_count(data)
+        if info['commodity_name'] != "":
+            info['star_pic_width'] = int(8+29*float(info['commodity_avg_star']))
+        html = t.render(Context(locals()))
+        return HttpResponse(html)
 
     return HttpResponse(html)
     

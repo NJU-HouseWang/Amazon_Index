@@ -42,3 +42,35 @@ def get_commodity_info(data):
 
     return commodity_info
 
+def get_star_count(data):
+    star_list = [float(single_review['star'].split()[0]) \
+                 for single_review in data['review']]
+    dic = count(star_list)
+    star_count = [0,0,0,0,0]
+    if(dic.has_key(1.0)):
+        star_count[0] = dic[1.0]
+    if(dic.has_key(2.0)):
+        star_count[1] = dic[2.0]
+    if(dic.has_key(3.0)):
+        star_count[2] = dic[3.0]
+    if(dic.has_key(4.0)):
+        star_count[3] = dic[4.0]  
+    if(dic.has_key(5.0)):
+        star_count[4] = dic[5.0]
+    return star_count
+
+def count(ta):
+    la = []
+    lth = len(ta)
+ 
+    for i in range(lth):
+        la.append(ta[i])
+ 
+    la.sort()
+    da = {}
+    i = 0
+    while i < lth:
+        da[la[i]] = la.count(la[i])
+        i = i + da[la[i]]
+ 
+    return da
