@@ -1,5 +1,5 @@
 """
-Django settings for amazonIndex project.
+Django settings for Amazon_Index project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -59,9 +59,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
 )
 
-ROOT_URLCONF = 'amazonIndex.urls'
+ROOT_URLCONF = 'Amazon_Index.urls'
 
-WSGI_APPLICATION = 'amazonIndex.wsgi.application'
+WSGI_APPLICATION = 'Amazon_Index.wsgi.application'
 
 
 # Database
