@@ -21,7 +21,7 @@ def get_category_list():
     得到分类列表
     """
     target_url = '/'.join([ROOT_URL, CATEGORY_URL])
-    print "## Fetching category_list ## " + target_url
+    # print "## Fetching category_list ## " + target_url
     cate_list_data = json.loads(urllib.urlopen(target_url).read())
     category_list = []
     for single_cate in cate_list_data:
@@ -35,16 +35,16 @@ def get_category_asin_list(cate):
     """
     count_target_url = '/'.join([ROOT_URL, CATEGORY_URL, 'count'])
     count_target_url = '/?'.join([count_target_url, urllib.urlencode({'category_name': cate})])
-    #print count_target_url
+    ## print count_target_url
     count_data = json.loads(urllib.urlopen(count_target_url).read())
     count = count_data['count']
-    #print count
+    ## print count
     category_asin_list = []
     for i in range(0, int(count / 20)):
         target_url = '/'.join([ROOT_URL, CATEGORY_URL])
         target_url = '?'.join([target_url, urllib.urlencode({'category_name': cate})])
         target_url = '&'.join([target_url, urllib.urlencode({'page': i, 'field': r"['ASIN']"})])
-        #print target_url
+        ## print target_url
         asin_data = json.loads(urllib.urlopen(target_url).read())
         for asin_info in asin_data:
             category_asin_list += [asin_info['ASIN']]
@@ -56,7 +56,7 @@ def get_commodity_data(asin):
     得到某个商品的json型数据
     """
     target_url = '/'.join([ROOT_URL, CATEGORY_URL, asin])
-    print "## Fetching commodity_info ## " + target_url
+    # print "## Fetching commodity_info ## " + target_url
     return json.loads(urllib.urlopen(target_url).read().replace('$', ''))
 
 
@@ -88,7 +88,7 @@ def get_avg_price(data):
     # 提取整体价格数据
     for offer in data['offer']:
         for info in offer['info']:
-            if info['seller']['name'] == 'Null':
+            if info['seller'] != 'Null':
                 price = info['price']
                 if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
@@ -101,7 +101,7 @@ def get_avg_price(data):
                     price = price.replace(',', '')
                 l += [
                     [info['seller']['name'], float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
-    #print list
+    ## print list
     l = sorted(l, key=lambda e: e[2], reverse=False)
 
     # 按照商家分类(时间合并)
@@ -133,27 +133,27 @@ def get_avg_price(data):
             tmplist += [[seller, tmpsumprice / tmpcount, tmptime]]
         seller_price_dict[seller] = tmplist
 
-    #print seller_list
-    #print seller_price_dict
+    ## print seller_list
+    ## print seller_price_dict
     total_price_list = []
     for seller in seller_list:
         # 时间加权，计算一个商家的平均售价
         current_price_list = seller_price_dict[seller]
-        #print current_price_list
+        ## print current_price_list
         i = 0
         sum = 0
         if len(current_price_list) > 2:
             while i < len(current_price_list) - 2:
                 sum += current_price_list[i][1] * (current_price_list[i + 1][2] - current_price_list[i][2]).seconds
                 i += 1
-            #print sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds
-            total_price_list += [
-                sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds]
+            ## print sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds
+            if (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds:
+                total_price_list += [sum / (current_price_list[len(current_price_list) - 1][2] - current_price_list[0][2]).seconds]
         elif len(current_price_list) == 2:
-            #print (current_price_list[0][1] + current_price_list[1][1]) / 2
+            ## print (current_price_list[0][1] + current_price_list[1][1]) / 2
             total_price_list += [(current_price_list[0][1] + current_price_list[1][1]) / 2]
         else:
-            #print current_price_list[0][1]
+            ## print current_price_list[0][1]
             total_price_list += [current_price_list[0][1]]
 
     sum = 0
@@ -162,9 +162,9 @@ def get_avg_price(data):
     if len(total_price_list) != 0:
         avg = sum / len(total_price_list)
     else:
-        print "Error: No Price"
+        # print "Error: No Price"
         return 0
-    print "Average: " + str(avg)
+    # print "Average: " + str(avg)
     return avg
 
 
@@ -178,25 +178,25 @@ def get_latest_price(data):
                 if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
-                list += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
+                l += [['Amazon', float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
             else:
                 price = info['price']
                 if type(price) != float and type(price) != int:
                     price = price.replace('$', '')
                     price = price.replace(',', '')
-                list += [
+                l += [
                     [info['seller']['name'], float(price), datetime.strptime(info['timestamp'], "%Y-%m-%d %H:%M:%S")]]
     l = sorted(l, key=lambda e: e[2], reverse=False)
     if l:
         return l[-1][1]
     else:
-        print "Error: No Price"
+        # print "Error: No Price"
         return 0
 
 
 if __name__ == '__main__':
     cate = 'Baby Products>Diapering>Diaper Bags'
-    print get_category_asin_list(cate)
+    # print get_category_asin_list(cate)
     '''
     cate_list = get_category_list()
     cate_list.sort()
@@ -207,7 +207,7 @@ if __name__ == '__main__':
         asin_list = get_category_asin_list(cate)
         for asin in asin_list:
             target_url = '/'.join([ROOT_URL, CATEGORY_URL, asin])
-            print "## Fetching commodity_info ## " + target_url
+            # print "## Fetching commodity_info ## " + target_url
             data = urllib.urlopen(target_url).read()
             path = "/media/shin/WXPPt/trendata/" + str(index) + "/"
             if not os.path.exists(path):
