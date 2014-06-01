@@ -83,13 +83,20 @@ def commodity(request):
     t = get_template('commodity.html')
     html = "error"
     if 'asin' in request.GET:
-        asin = request.GET['asin']
-        data = Trendata.get_commodity_data(asin)
-        info = CommodityLogic.get_commodity_info(data)
-        star_count = CommodityLogic.get_star_count(data)
-        if info['commodity_name'] != "":
-            info['star_pic_width'] = int(8+29*float(info['commodity_avg_star']))
-        html = t.render(Context(locals()))
-        return HttpResponse(html)
+		asin = request.GET['asin']
+		data = Trendata.get_commodity_data(asin)
+		info = CommodityLogic.get_commodity_info(data)
+		star_count = CommodityLogic.get_star_count(data)
+		price_info = CommodityLogic.get_price_info(data)
+		earliest_date = str((price_info['earliest_time']).year)+"-"+str((price_info['earliest_time']).month)+"-"+str((price_info['earliest_time']).day)
+		latest_date = str((price_info['latest_time']).year)+"-"+str((price_info['latest_time']).month)+"-"+str((price_info['latest_time']).day)
+		time_list = (price_info['time_list'])
+		lowest_price = (price_info['lowest_price'])
+		highest_price = (price_info['highest_price'])
+		avg_price = (price_info['avg_price'])
+		if info['commodity_name'] != "":
+			info['star_pic_width'] = int(8+29*float(info['commodity_avg_star']))
+		html = t.render(Context(locals()))
+		return HttpResponse(html)
 
     return HttpResponse(html)
