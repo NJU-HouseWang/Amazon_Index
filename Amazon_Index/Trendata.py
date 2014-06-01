@@ -21,7 +21,7 @@ def get_category_list():
     得到分类列表
     """
     target_url = '/'.join([ROOT_URL, CATEGORY_URL])
-    # print "## Fetching category_list ## " + target_url
+    print "## Fetching category_list ## " + target_url
     cate_list_data = json.loads(urllib.urlopen(target_url).read())
     category_list = []
     for single_cate in cate_list_data:
@@ -56,7 +56,7 @@ def get_commodity_data(asin):
     得到某个商品的json型数据
     """
     target_url = '/'.join([ROOT_URL, CATEGORY_URL, asin])
-    # print "## Fetching commodity_info ## " + target_url
+    print "## Fetching commodity_info ## " + target_url
     return json.loads(urllib.urlopen(target_url).read().replace('$', ''))
 
 

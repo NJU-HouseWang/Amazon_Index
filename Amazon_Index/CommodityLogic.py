@@ -21,7 +21,7 @@ def get_commodity_info(data):
 
     commodity_info['commodity_img'] = img_url
 
-    commodity_info['commodity_avg_price'] = round(get_avg_price(data),2)
+    commodity_info['commodity_avg_price'] = round(get_avg_price(data), 2)
 
     commodity_tags = data['stats_info']['keywords']
     tag = ''

@@ -60,3 +60,47 @@ def choose_category(category_list, cate):
         if single_cate.startswith(cate):
             result_dict['cate_list'] += [single_cate]
     return result_dict
+
+
+def get_category_sales_statistics(cate):
+    root_cate = 'amazon'
+    cate_sp = cate.split('>')
+    if len(cate_sp) > 1:
+        cate_sp = cate_sp[:-1]
+        root_cate = '>'.join(cate_sp)
+
+    t_file = open('turnover.txt', 'r')
+    data_list = t_file.read().split('\n')
+    t_file.close()
+
+    data_chose = []
+    result = {'sales_statistics': [], 'turnover_statistics': []}
+    if root_cate != 'amazon':
+        for data_line in data_list:
+            if data_line.startswith(root_cate):
+                tmp = data_line.split('--')
+                if len(tmp) == 2:
+                    tmp[2] = 0
+                name = [i for i in tmp[0].split('>') if i not in root_cate.split('>')][0]
+                if tmp[0] == cate:
+                    result['sales_statistics'] += [[name.replace("&", "$"), tmp[1], 1]]
+                    result['turnover_statistics'] += [[name.replace("&", "$"), tmp[2], 1]]
+                else:
+                    result['sales_statistics'] += [[name.replace("&", "$"), tmp[1], 0]]
+                    result['turnover_statistics'] += [[name.replace("&", "$"), tmp[2], 0]]
+    else:
+        etc_sales = 0
+        etc_turnover = 0
+        for data_line in data_list:
+            tmp = data_line.split('--')
+            if len(tmp) == 2:
+                tmp[2] = 0
+            if data_line.startswith(cate):
+                result['sales_statistics'] += [[cate, tmp[1], 0]]
+                result['turnover_statistics'] += [[cate, tmp[2], 0]]
+            else:
+                etc_sales += tmp[1]
+                etc_turnover += tmp[2]
+        result['sales_statistics'] += [['Other categories', etc_sales, 1]]
+        result['turnover_statistics'] += [['Other categories', etc_turnover, 1]]
+    return result

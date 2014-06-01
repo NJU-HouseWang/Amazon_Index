@@ -84,9 +84,9 @@
     }
 
     #sortContainer {
-        padding-top: 5px;
-        width: 50%;
-        float: left;
+	padding-top: 5px;
+	width: 60%;
+	float: left;
     }
 
     .sortWay {
@@ -95,12 +95,6 @@
         font-style: italic;
         font-variant: normal;
         text-transform: none;
-    }
-
-    #searchContainer {
-        padding-top: 5px;
-        width: 50%;
-        float: left;
     }
 
     #center {
@@ -331,16 +325,16 @@
                     type: 'pie',
                     name: 'Browser share',
                     data: [
+                        {% for sales_data in statistics_data.sales_statistics %}
                         {
-                            name: 'This Category',
-                            y: 707,
+                            name: '{{ sales_data.0 }}',
+                            y: {{ sales_data.1 }}
+                            {% if sales_data.2 %}
+                                ,sliced: true,
+                                selected: true
+                            {% endif %}
                         },
-                        {
-                            name: 'Others',
-                            y: 1260000,
-                            sliced: true,
-                            selected: true
-                        }
+                        {% endfor %}
                     ]
                 }
             ]
@@ -375,16 +369,16 @@
                     type: 'pie',
                     name: 'Browser share',
                     data: [
+                        {% for turnover_data in statistics_data.turnover_statistics %}
                         {
-                            name: 'This Category',
-                            y: 20592,
+                            name: '{{ turnover_data.0 }}',
+                            y: {{ turnover_data.1 }}
+                            {% if turnover_data.2 %}
+                                ,sliced: true,
+                                selected: true
+                            {% endif %}
                         },
-                        {
-                            name: 'Others',
-                            y: 324380131,
-                            sliced: true,
-                            selected: true
-                        }
+                        {% endfor %}
                     ]
                 }
             ]
@@ -430,13 +424,10 @@
         </div>
         <div class="layout" id="sortSearch">
             <div class="content" id="sortContainer">Sorted by: <a class="sortWay"
-                                                                  href="/category/?sortby=name{{ old_request }}">Name</a><a
-                    class="sortWay" href="/category/?sortby=sales{{ old_request }}">Sales</a><a class="sortWay"
-                                                                                                href="/category/?sortby=price{{ old_request }}">Price</a><a
-                    class="sortWay" href="/category/?sortby=stars{{ old_request }}">Stars</a></div>
-            <div id="searchContainer">Search:<input type="searchtf"
-                                                    style="position: relative; margin-top: -1px; width: 150px; margin-left: 10px;">
-            </div>
+                                    href="/category/?sortby=name{{ href_tag.name }}{{ old_request }}">Name{{ sort_tag.name }}</a><a
+                    class="sortWay" href="/category/?sortby=sales{{ href_tag.sales }}{{ old_request }}">Sales{{ sort_tag.sales }}</a><a class="sortWay"
+                                    href="/category/?sortby=avg_price{{ href_tag.avg_price }}{{ old_request }}">Price{{ sort_tag.avg_price }}</a><a
+                    class="sortWay" href="/category/?sortby=avg_star{{ href_tag.avg_star }}{{ old_request }}">Stars{{ sort_tag.avg_star }}</a></div>
         </div>
     </div>
     <div class="layout" id="center">

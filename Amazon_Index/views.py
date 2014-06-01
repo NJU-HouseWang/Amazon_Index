@@ -4,7 +4,7 @@ from django.template import Context
 import CategoryLogic
 import CommodityLogic
 import Trendata
-import datetime
+import copy
 
 
 def index(request):
@@ -15,9 +15,12 @@ def index(request):
 
 
 def category(request):
+    page_title = ''
     t = get_template('category.html')
     # old request
     old_get_request = request.GET
+    old_request = '&' + request.GET.urlencode()
+    tmp_get = copy.deepcopy(request.GET)
     # full category list from trendata
     full_cate_list = Trendata.get_category_list()
     # transfer category list to js select type
@@ -32,6 +35,7 @@ def category(request):
             if request.GET['cate' + str(i)] != "":
                 category_selected += '>' + request.GET['cate' + str(i)]
         search_result_dict = CategoryLogic.choose_category(full_cate_list, category_selected.replace('$', "&"))
+        page_title = search_result_dict['cate_show'].replace('&', 'and') + ' -- Category'
     else:
         raise Http404
         return HttpResponse("")
@@ -51,7 +55,27 @@ def category(request):
             if info['commodity_name'] != "":
                 info['star_pic_width'] = int(8 + 29 * float(info['commodity_avg_star']))
                 result_list += [info]
+
+    statistics_data = CategoryLogic.get_category_sales_statistics(search_result_dict['cate_show'])
+
+    # if sort
+    sort_tag = {'name': '(up)', 'avg_price': '(up)', 'sales': '(down)', 'avg_star': '(down)'}
+    rev = {'name': False, 'avg_price': False, 'sales': True, 'avg_star': True}
+    href_tag = {'name': '', 'avg_price': '', 'sales': '', 'avg_star': ''}
+    if 'sortby' in old_get_request:
+        if request.GET['sortby'][-1] == '_':
+            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby'][:-1]], reverse=not rev[request.GET['sortby'][:-1]])
+        else:
+            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby']], reverse=rev[request.GET['sortby']])
+            if sort_tag[request.GET['sortby']] == '(down)':
+                sort_tag[request.GET['sortby']] = '(up)'
+            else:
+                sort_tag[request.GET['sortby']] = '(down)'
+            href_tag[request.GET['sortby']] = '_'
+        tmp_get.pop('sortby')
+    old_request = '&' + tmp_get.urlencode()
     html = t.render(Context(locals()))
+
     return HttpResponse(html)
 
 
