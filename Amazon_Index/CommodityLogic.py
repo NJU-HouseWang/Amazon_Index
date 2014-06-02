@@ -1,4 +1,7 @@
 from Trendata import *
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
 
 def get_commodity_info(data):
     commodity_info = {}
@@ -133,3 +136,112 @@ def handle_price_info(price_list, time_list):
         day = (time_list[i]).day
         data += [year,month,day,price_list[i]]
     return data
+	
+def get_sell_info(commodity_data):
+	sell_info = []
+	for content in commodity_data['review']:
+		info = {'consumer': content['consumer'], 'ASIN': commodity_data['ASIN'],
+                'time': datetime.strptime(content['publishTime'].split(' ')[0], "%Y-%m-%d").date()}
+		sell_info += [info]
+	return sell_info
+
+
+def get_buy_time(sell_info, consumer):
+	for info in sell_info:
+		if info['consumer'] == consumer:
+			return info['time']
+
+def get_relative_commodities(asin):
+	sell_info = get_sell_info(get_commodity_data(asin))
+
+    # get consumer list
+	consumer_list = []
+	for info in sell_info:
+		if info['consumer'] not in consumer_list:
+			consumer_list += [info['consumer']]
+
+    # get relative sell info
+	relative_sell_info = []
+	source_file = open('/Amazon_Index/Amazon_Index/recommender.data', 'r')
+	data_line = source_file.readline()
+	while data_line:
+		tmp = data_line.split('////')
+		if tmp[0] in consumer_list:
+			str_date = tmp[2][:-1]
+			if str_date == '':
+				data_line = source_file.readline()
+				continue
+			date = datetime.strptime(str_date, "%Y-%m-%d").date()
+
+			base_buy_date = get_buy_time(sell_info, tmp[0])
+			delta = base_buy_date - date
+			if delta > timedelta(-5) and delta < timedelta(5) and tmp[1] != asin:
+				line_info = {'consumer': tmp[0], 'asin': tmp[1], 'date': date}
+				relative_sell_info += [line_info]
+		data_line = source_file.readline()
+
+    # stastics
+	relative_asin_list = []
+	relative_asin_stastics = {}
+	for info in relative_sell_info:
+		if info['asin'] not in relative_asin_list:
+			relative_asin_list += [info['asin']]
+			relative_asin_stastics[info['asin']] = 1
+		else:
+			relative_asin_stastics[info['asin']] = relative_asin_stastics[info['asin']] + 1
+	sorted_asin_stastics = sorted(relative_asin_stastics.items(), key=lambda e: e[1], reverse=True)
+
+	keys = []
+	values = []
+	for k, v in sorted_asin_stastics:
+		keys += [k]
+		values += [v]
+
+	count = 10;
+	i = 0
+	keys_show = []
+	for key in keys:
+		if i != count:
+			keys_show += [autosplit(get_commodity_name(get_commodity_data(key)))]
+		else:
+			break
+		i += 1
+	values_show = values[:10]
+	keys_show.reverse()
+	values_show.reverse()
+	result = {'commodity':keys_show,'sales':values_show}
+	return result
+	
+def get_sales_info(data):
+	sales_info = {}
+	time_list = []
+	time_list1 = []
+	sales_list = []
+	review = data['review']
+
+	for each_review in review:
+		time_list1 +=[each_review['publishTime'].split(' ')[0][0:7]]
+	for each_time in time_list1:
+		if each_time not in time_list:
+			time_list += [each_time]
+	time_list.sort()
+
+	sales_info['first_sales_time'] =time_list[0]
+	sales_info['latest_sales_time'] =time_list[-1]
+
+	for each_time in time_list:
+		sales = 0
+		for each_review in review:
+			if each_review['publishTime'].startswith(each_time):
+				sales = sales+1
+		sales_list +=[sales]
+	
+	for i in range(0,len(time_list)):
+		time_list[i] = time_list[i].replace('-','',)
+	sales_info['time_list'] = time_list
+	sales_info['sales_list'] = sales_list
+	return sales_info
+	
+if __name__ == '__main__':
+	asin = 'B002BH3I9U'
+	print get_relative_commodities(asin)
