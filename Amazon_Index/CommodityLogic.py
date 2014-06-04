@@ -242,6 +242,37 @@ def get_sales_info(data):
 	sales_info['sales_list'] = sales_list
 	return sales_info
 	
+def read_dic(path):
+	source_file = open(path, 'r')
+	data_line = source_file.readline()
+	dic = []
+	while data_line:
+		if data_line[:-1] not in dic:
+			dic.append(data_line[:-1])
+		data_line = source_file.readline()
+	source_file.close()
+	return dic
+    
+def analyse_data(data,dic):
+	review = data['review']
+	result = {}
+	for each_review in review:
+		content = each_review['content']
+		content = content.lower()
+		content = content.replace(',','')
+		content = content.replace('.','')
+		content = content.replace('?','')
+		content = content.replace('!','')
+		words = content.split(' ')
+		for word in words:
+			if word in dic:
+				if result.has_key(word):
+					result[word] += 1
+				else:
+					result[word] = 1
+	return result
+	
 if __name__ == '__main__':
 	asin = 'B002BH3I9U'
+	
 	print get_relative_commodities(asin)
