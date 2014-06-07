@@ -106,14 +106,18 @@ def commodity(request):
 		highest_price = (price_info['highest_price'])
 		avg_price = (price_info['avg_price'])
 		
-		relative_commodities = (CommodityLogic.get_relative_commodities(asin))['commodity']
-		relative_sales = (CommodityLogic.get_relative_commodities(asin))['sales']
+		#relative_commodities = (CommodityLogic.get_relative_commodities(asin))['commodity']
+		#relative_sales = (CommodityLogic.get_relative_commodities(asin))['sales']
 		
 		sales_info = CommodityLogic.get_sales_info(data)
 		first_sales_time = sales_info['first_sales_time']
 		latest_sales_time = sales_info['latest_sales_time']
 		sales_time_list = sales_info['time_list']
 		sales_list = sales_info['sales_list']
+		
+		emotion_count = CommodityLogic.get_emotion_count(data)
+		positive_count = emotion_count[0]
+		nagative_count = emotion_count[1]
 
 		html = t.render(Context(locals()))
 		return HttpResponse(html)

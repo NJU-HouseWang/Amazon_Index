@@ -278,7 +278,16 @@ def analyse_data(data,dic):
 					result[word] = 1
 	return result
 	
-if __name__ == '__main__':
-	asin = 'B002BH3I9U'
+def count_data(dic):
+	sum = 0
+	for key in dic.keys():
+		sum += dic[key]
+	return sum
 	
-	print get_relative_commodities(asin)
+def get_emotion_count(data):
+	positive_words = read_dic('/Amazon_Index/dic/positive.txt')
+	nagative_words = read_dic('/Amazon_Index/dic/nagative.txt')
+	positive_count = count_data(analyse_data(data,positive_words))
+	nagative_count = count_data(analyse_data(data,nagative_words))
+	return [positive_count,nagative_count]
+
