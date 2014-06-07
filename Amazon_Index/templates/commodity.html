@@ -353,7 +353,7 @@ html{
             plotShadow: false
         },
         title: {
-            text: 'Positive and Nagative Words in Comments'
+            text: 'Positive and Negative Words in Comments'
         },
         tooltip: {
     	     pointFormat: '{series.name}: <b>{point.percentage}%</b>'
@@ -367,7 +367,7 @@ html{
                     color: '#000000',
                     connectorColor: '#000000',
                     formatter: function() {
-                        return  this.point.name +'</b>: '+ this.percentage /100* ({{positive_count}}+{{nagative_count}});
+                        return  this.point.name +'</b>: '+ this.percentage /100* ({{positive_count}}+{{negative_count}});
                     }
                 }
             }
@@ -377,11 +377,7 @@ html{
             name: 'Percentage',
             data: [
                 ['Positive Words',   {{positive_count}}],
-<<<<<<< HEAD
-                ['Nagative Words',   {{nagative_count}}]
-=======
-                ['Negative Words',   {{nagative_count}}]
->>>>>>> 0cdfd6d094f37d14ceac910e03848d50e29bdcd2
+                ['Negative Words',   {{negative_count}}]
             ]
         }]
     });

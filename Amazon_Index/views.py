@@ -117,7 +117,7 @@ def commodity(request):
 		
 		emotion_count = CommodityLogic.get_emotion_count(data)
 		positive_count = emotion_count[0]
-		nagative_count = emotion_count[1]
+		negative_count = emotion_count[1]
 
 		html = t.render(Context(locals()))
 		return HttpResponse(html)

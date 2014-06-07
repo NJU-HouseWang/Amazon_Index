@@ -290,7 +290,7 @@ def count_data(dic):
 
 def get_emotion_count(data):
     positive_words = read_dic('dic/positive.txt')
-    negative_words = read_dic('dic/nagative.txt')
+    negative_words = read_dic('dic/negative.txt')
     positive_count = count_data(analyse_data(data, positive_words))
     negative_count = count_data(analyse_data(data, negative_words))
     return [positive_count, negative_count]
