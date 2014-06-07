@@ -162,7 +162,7 @@ html{
 	position:relative;
 	background-color:red;
 }
-#relation_tab{
+#emotion_tab{
 	width: 400px;
 	height:450px;
 	top:50px;
@@ -336,6 +336,52 @@ html{
             }
         }]
     });
+	
+	Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+    return {
+        radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+        stops: [
+            [0, color],
+            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+        ]
+    };
+});
+    $('#emotion_tab').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Positive and Nagative Words in Comments'
+        },
+        tooltip: {
+    	     pointFormat: '{series.name}: <b>{point.percentage}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    formatter: function() {
+                        return  this.point.name +'</b>: '+ this.percentage /100* ({{positive_count}}+{{nagative_count}});
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Percentage',
+            data: [
+                ['Positive Words',   {{positive_count}}],
+                ['Nagative Words',   {{nagative_count}]
+            ]
+        }]
+    });
+	/*
 	 $('#relation_tab').highcharts({                                           
         chart: {                                                           
             type: 'bar'                                                    
@@ -347,13 +393,13 @@ html{
             text: 'The commodity customers buy when buying this'                                  
         },                                                                 
         xAxis: { 
-           /*
+           
 			categories: [
 				{%for commodity in relative_commodities%}
 					{{commodity}}
 				,
 				{%endfor%}
-			],       */
+			],       
 		   categories:[01,02,03] , 
 			                               
             title: {                                                       
@@ -385,16 +431,16 @@ html{
         },                                                                 
         series: [{                                                         
             name: 'Count',            
-			/*
+			
 			data: [
 				{%for sales in relative_sales%}
 					{{sales}}
 				,
 				{%endfor%}
-			]   */ 			
+			]   		
 			data:[100,80,50]                                      
         }]                                                                 
-    });          
+    });    */      
 });
 </script>
 </head>
@@ -441,7 +487,7 @@ html{
 	<div class="layout" id="right_tab">
 		<div class="content" id="stars_tab" style="min-width:400px;height:450px;">
 		</div>
-		<div class="content" id="relation_tab">
+		<div class="content" id="emotion_tab">
 		</div>
 	</div>
 </div>
