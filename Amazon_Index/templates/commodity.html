@@ -347,14 +347,14 @@ html{
             text: 'The commodity customers buy when buying this'                                  
         },                                                                 
         xAxis: { 
-           
+           /*
 			categories: [
 				{%for commodity in relative_commodities%}
 					{{commodity}}
 				,
 				{%endfor%}
-			],       
-			/*   categories:[01,02,03] ,*/ 
+			],       */
+		   categories:[01,02,03] , 
 			                               
             title: {                                                       
                 text: 'Commodities'                                                 
@@ -385,14 +385,14 @@ html{
         },                                                                 
         series: [{                                                         
             name: 'Count',            
-			
+			/*
 			data: [
 				{%for sales in relative_sales%}
 					{{sales}}
 				,
 				{%endfor%}
-			]    			
-			/*data:[100,80,50] */                                     
+			]   */ 			
+			data:[100,80,50]                                      
         }]                                                                 
     });          
 });
