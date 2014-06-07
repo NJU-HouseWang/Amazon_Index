@@ -20,9 +20,12 @@ def get_category_list():
     """
     得到分类列表
     """
-    target_url = '/'.join([ROOT_URL, CATEGORY_URL])
-    print "## Fetching category_list ## " + target_url
-    cate_list_data = json.loads(urllib.urlopen(target_url).read())
+    #target_url = '/'.join([ROOT_URL, CATEGORY_URL])
+    #print "## Fetching category_list ## " + target_url
+    #cate_list_data = json.loads(urllib.urlopen(target_url).read())
+    category_file = open('category.json', 'r')
+    cate_list_data = json.loads(category_file.read())
+    category_file.close()
     category_list = []
     for single_cate in cate_list_data:
         category_list += [single_cate['name']]

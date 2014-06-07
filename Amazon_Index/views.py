@@ -64,9 +64,11 @@ def category(request):
     href_tag = {'name': '', 'avg_price': '', 'sales': '', 'avg_star': ''}
     if 'sortby' in old_get_request:
         if request.GET['sortby'][-1] == '_':
-            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby'][:-1]], reverse=not rev[request.GET['sortby'][:-1]])
+            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby'][:-1]],
+                                 reverse=not rev[request.GET['sortby'][:-1]])
         else:
-            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby']], reverse=rev[request.GET['sortby']])
+            result_list = sorted(result_list, key=lambda e: e['commodity_' + request.GET['sortby']],
+                                 reverse=rev[request.GET['sortby']])
             if sort_tag[request.GET['sortby']] == '(down)':
                 sort_tag[request.GET['sortby']] = '(up)'
             else:

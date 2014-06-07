@@ -1,0 +1,117 @@
+Baby Products>Diapering>Diaper Bags--402--4821.5651877
+Baby Products>Nursery>Bedding--168--563.43287043
+Beauty>Bath & Body>Bath--202--1459.8808720
+Beauty>Bath & Body>Bathing Accessories--1062--855.56027825
+Beauty>Fragrance>Sets--309--5536.133335
+Beauty>Hair Care>Shampoos--625--6038.4464494
+Beauty>Hair Care>Styling Products>Hair Extensions & Wigs--0--3025.7768829
+Beauty>Hair Care>Styling Tools--2126--331.9300142
+Beauty>Makeup>Body--207--3586.5559393
+Beauty>Makeup>Nails--11881--47.906568627
+Beauty>Tools & Accessories>Hair Coloring Tools--18--4765.6604236
+Cell Phones & Accessories>Accessories>Headsets--0--8.3485714285
+Cell Phones & Accessories>Accessories>Smart Watches & Accessories--138--25680.145462
+Cell Phones & Accessories>Cell Phones>Contract Cell Phones--13640--1226.46
+Clothing & Accessories>Baby>Baby Girls--914--1730.14080
+Clothing & Accessories>Baby>Unisex--858--682.54442444
+Clothing & Accessories>Boys>Overalls--0--5419.7367554
+Clothing & Accessories>Boys>Pants--46--7614.0530584
+Clothing & Accessories>Boys>Shorts--36--8132.7683570
+Clothing & Accessories>Boys>Sleepwear & Robes--530--3550.2666754
+Clothing & Accessories>Boys>Suits & Sport Coats--272--33628.402424
+Clothing & Accessories>Boys>Swim--71--10902.999229
+Clothing & Accessories>Girls>Accessories--472--2912.0257062
+Clothing & Accessories>Girls>Clothing Sets--172--5169.3917045
+Clothing & Accessories>Girls>Dresses--429--2798.2252947
+Clothing & Accessories>Girls>Leggings--4--212.4
+Clothing & Accessories>Luggage & Bags>Backpacks--1523--844.35669991
+Clothing & Accessories>Luggage & Bags>Umbrellas--634--3138.8216415
+Clothing & Accessories>Men>Jeans--106--733.06666666
+Clothing & Accessories>Men>Sweaters--97--2172.08
+Clothing & Accessories>Novelty & Special Use>Sports Clothing--1635--1037.1162134
+Clothing & Accessories>Novelty & Special Use>Work Wear & Uniforms--671--381.2304761
+Clothing & Accessories>Novelty & Special Use>World Apparel--168--8494.5657584
+Clothing & Accessories>Women>Active--3644--5233.1706687
+Clothing & Accessories>Women>Dresses--2855--47294.684501
+Clothing & Accessories>Women>Dresses>Special Occasion--0--44265.187583
+Clothing & Accessories>Women>Jeans--1492--265098.46935
+Clothing & Accessories>Women>Leggings--1464--1498.3714299
+Clothing & Accessories>Women>Skirts--156--4618.0587886
+Clothing & Accessories>Women>Suits--36--44019.428842
+Electronics>Accessories & Supplies>Microphones--1699--1406.728310
+Electronics>Cell Phones & Accessories>Mobile Broadband--0--1767.6
+Electronics>Computers & Accessories>Cables & Accessories>Input Devices>Graphics Tablet Styluses--104--68624.739303
+Electronics>Computers & Accessories>Desktops--339--89014.357992
+Electronics>Computers & Accessories>External Components--3161--31.7
+Electronics>Computers & Accessories>Laptop & Netbook Computer Accessories--1487--6534.2979304
+Electronics>Television & Video>Televisions--130--1852.401
+Electronics>Video Game Consoles & Accessories>PlayStation 4--217--6562.5578628
+Electronics>Video Game Consoles & Accessories>Sony PSP--195--5628.6362332
+Electronics>Video Game Consoles & Accessories>Xbox 360--767--10317.879169
+Health & Personal Care>Household Supplies>Air Fresheners--9--160.32154803
+Health & Personal Care>Household Supplies>Household Cleaning--224--1197.4316284
+Home & Kitchen>Artwork>Drawings--0--15931.490870
+Home & Kitchen>Bath>Bathroom Accessories>Bathroom Accessory Sets--1--41660.84294
+Home & Kitchen>Bath>Bathroom Accessories>Wastebaskets--3--78731.487858
+Home & Kitchen>Bath>Towels--276--2716.5386682
+Home & Kitchen>Bedding>Feather Beds--69--6694.7610833
+Home & Kitchen>Furniture>Home Office Furniture--270--396316.10550
+Home & Kitchen>Heating, Cooling & Air Quality>Air Conditioners & Accessories--352--23154.304488
+Home & Kitchen>Heating, Cooling & Air Quality>Space Heaters--384--17179.821554
+Home & Kitchen>Kids' Home Store>Nursery Furniture--263--10163.865327
+Home & Kitchen>Kitchen & Dining>Coffee, Tea & Espresso--1372--5165.5840478
+Home & Kitchen>Kitchen & Dining>Kitchen Utensils & Gadgets--250--390.27599212
+Home & Kitchen>Storage & Organization>Baskets & Bins>Fabric--1--217806.36083
+Home & Kitchen>Storage & Organization>Clothing & Closet Storage>Closet Systems--2--149649.91200
+Home & Kitchen>Storage & Organization>Clothing & Closet Storage>Garment Racks--7--74042.740106
+Home & Kitchen>Storage & Organization>Clothing & Closet Storage>Hangers--0--11952.842004
+Home & Kitchen>Storage & Organization>Clothing & Closet Storage>Shoe Racks & Trees--23--67977.134593
+Home & Kitchen>Storage & Organization>Clothing & Closet Storage>Space Saver Bags--4--53562.426180
+Home & Kitchen>Storage & Organization>Laundry Storage & Organization--0--22584.811417
+Home & Kitchen>Storage & Organization>Racks, Shelves & Drawers--826--3547.9249953
+Home & Kitchen>Storage & Organization>Trash & Recycling>Trash Cans--0--17715.365901
+Jewelry>Accessories>Jewelry Boxes & Organizers--593--37886.452941
+Office Products>Office Electronics>Calculators--0--
+Office Products>Office Electronics>Other Office Equipment--211--166.42
+Office Products>Office Furniture & Lighting>Cabinets, Racks & Shelves--328--583342.49676
+Office Products>Office Furniture & Lighting>Carts & Stands--822--18113.653953
+Office Products>Office Furniture & Lighting>Chairs & Sofas>Desk Chairs--0--70955.550857
+Office Products>Office Furniture & Lighting>Desks & Workstations--35--166535.2878
+Office Products>Office Furniture & Lighting>Furniture Accessories--1353--6841.499743
+Office Products>Office Furniture & Lighting>Office Lighting--1031--8859.167491
+Office Products>Office Furniture & Lighting>Tables--158--226701.06167
+Patio, Lawn & Garden>Gardening>Plant Containers>Urns--4--178869.61144
+Patio, Lawn & Garden>Mowers & Outdoor Power Tools>Mowers & Tractors>Walk-Behind Mowers--144--459627.93685
+Pet Supplies>Birds>Treats--95--7079.6090093
+Pet Supplies>Cats>Memorials--1--71087.539572
+Pet Supplies>Dogs>Beds & Furniture--138--117799.36940
+Pet Supplies>Dogs>Carriers & Travel Products--575--20793.467580
+Pet Supplies>Dogs>Feeding & Watering Supplies--140--199.13014635
+Pet Supplies>Dogs>Food--573--3135.5173398
+Pet Supplies>Dogs>Litter & Housebreaking--16--5671.8616753
+Pet Supplies>Dogs>Memorials--2--25791.906310
+Pet Supplies>Fish & Aquatic Pets>Food--358--
+Pet Supplies>Fish & Aquatic Pets>Water Treatments--302--2097.7711510
+Pet Supplies>Horses>Food--0--7071.6683841
+Pet Supplies>Small Animals>Health Supplies--29--4825.7482845
+Shoes>Boys>Athletic--721--24667.138384
+Shoes>Boys>Outdoor--1145--8989.6586068
+Shoes>Boys>Slippers--283--5818.0648901
+Shoes>Boys>Sneakers--322--278127.13512
+Shoes>Boys>Uniform & School Shoes--0--8022.3403810
+Shoes>Girls>Outdoor--1047--16285.134872
+Shoes>Girls>Slippers--320--5131.1812780
+Shoes>Girls>Sneakers--430--11577.500531
+Shoes>Handbags>Clutches--184--19824.918974
+Shoes>Handbags>Cross-Body Bags--501--12443.04025
+Shoes>Handbags>Evening Bags--238--80131.723074
+Shoes>Handbags>Shoulder Bags--624--7587.956106
+Shoes>Men>Outdoor--10--3620.6222199
+Shoes>Men>Sandals--940--1105.7093005
+Shoes>Men>Work & Safety--30--23015.125243
+Shoes>Shoe Care & Accessories>Shoelaces--6--10689.11610
+Shoes>Women>Outdoor--5502--1170.8
+Shoes>Women>Sandals--2408--1343.9502355
+Shoes>Women>Work & Safety--72--12484.223803
+Sports & Outdoors>Equestrian Sports>Horse Care Equipment--26--2387.6701866
+Tools & Home Improvement>Storage & Home Organization>Garage Storage--96--10417.2726862
