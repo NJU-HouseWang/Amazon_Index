@@ -7,11 +7,11 @@
 </title>
 <style type="text/css">
 body{
-	margin::0;
+	margin:0;
 	height:100%;
 }
 html{
-	height::100%;
+	height:100%;
 }
 .content{
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
@@ -57,12 +57,12 @@ html{
 }
 #img{
 	width:200px;
-	margin:0 auto;
+	margin:0;
 	position:absolute;   
 	top:25px; 
 	left:50px;  
 	height:200px;    
-	margin-top:0 auto;
+	margin-top:0;
 }
 #commodity_info{
 	height: 250px;
@@ -94,7 +94,7 @@ html{
 	top:100px; 
 	left:350px;  
 	height:200px;    
-	margin-top:0 auto;
+	margin-top:0;
 }
 #right{
 	width:200px;
@@ -103,7 +103,7 @@ html{
 	top:120px; 
 	left:720px;  
 	height:200px;    
-	margin-top:0 auto;
+	margin-top:0;
 }
 #star_bk{
 	width:160px;
@@ -316,7 +316,7 @@ html{
             enabled: false
         },
         tooltip: {
-            pointFormat: 'Count: <b>{point.y:.1f} Peaple</b>',
+            pointFormat: 'Count: <b>{point.y:.1f} People</b>',
         },
         series: [{
             name: 'Count',
@@ -371,76 +371,16 @@ html{
                     }
                 }
             }
-        },
+        }
         series: [{
             type: 'pie',
             name: 'Percentage',
             data: [
                 ['Positive Words',   {{positive_count}}],
-                ['Nagative Words',   {{nagative_count}]
+                ['Negative Words',   {{nagative_count}}]
             ]
         }]
     });
-	/*
-	 $('#relation_tab').highcharts({                                           
-        chart: {                                                           
-            type: 'bar'                                                    
-        },                                                                 
-        title: {                                                           
-            text: 'Relative Commodities of {{info.commodity_name}}'                    
-        },                                                                 
-        subtitle: {                                                        
-            text: 'The commodity customers buy when buying this'                                  
-        },                                                                 
-        xAxis: { 
-           
-			categories: [
-				{%for commodity in relative_commodities%}
-					{{commodity}}
-				,
-				{%endfor%}
-			],       
-		   categories:[01,02,03] , 
-			                               
-            title: {                                                       
-                text: 'Commodities'                                                 
-            }                                                              
-        },                                                                 
-        yAxis: {                                                           
-            min: 0,                                                        
-            title: {                                                       
-                text: 'Count',                             
-                align: 'high'                                              
-            },                                                             
-            labels: {                                                      
-                overflow: 'justify'                                        
-            }                                                              
-        },                                                                                                                        
-        plotOptions: {                                                     
-            bar: {                                                         
-                dataLabels: {                                              
-                    enabled: true                                          
-                }                                                          
-            }                                                              
-        },                                                                 
-        legend: {                                                          
-             enabled: false                                                   
-        },                                                                 
-        credits: {                                                         
-            enabled: false                                                 
-        },                                                                 
-        series: [{                                                         
-            name: 'Count',            
-			
-			data: [
-				{%for sales in relative_sales%}
-					{{sales}}
-				,
-				{%endfor%}
-			]   		
-			data:[100,80,50]                                      
-        }]                                                                 
-    });    */      
 });
 </script>
 </head>

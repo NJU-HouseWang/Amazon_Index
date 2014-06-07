@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2390cee7-2d26-40e7-a1be-e00c2dc69313" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Amazon_Index/templates/category.html" afterPath="$PROJECT_DIR$/Amazon_Index/templates/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Amazon_Index/views.py" afterPath="$PROJECT_DIR$/Amazon_Index/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Amazon_Index/CommodityLogic.py" afterPath="$PROJECT_DIR$/Amazon_Index/CommodityLogic.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Amazon_Index/templates/commodity.html" afterPath="$PROJECT_DIR$/Amazon_Index/templates/commodity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Amazon_Index.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Amazon_Index$manage.coverage" NAME="manage Coverage Results" MODIFIED="1402123215878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Amazon_Index$manage.coverage" NAME="manage Coverage Results" MODIFIED="1402129300452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Amazon_Index$InitData.coverage" NAME="InitData Coverage Results" MODIFIED="1401522822508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Amazon_Index" />
     <SUITE FILE_PATH="coverage/Amazon_Index$Unittests_in_D__repositories_git_Amazon_Index.coverage" NAME="Unittests in D:\repositories\git\Amazon_Index Coverage Results" MODIFIED="1401204608788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Amazon_Index$CategorySearcher.coverage" NAME="CategorySearcher Coverage Results" MODIFIED="1401361974940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Amazon_Index" />
@@ -35,8 +36,9 @@
       <file leaf-file-name="category.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="441" column="44" selection-start="13483" selection-end="13483" vertical-scroll-proportion="-3.7735848" vertical-offset="8179" max-vertical-offset="9405">
+            <state line="314" column="37" selection-start="8423" selection-end="8429" vertical-scroll-proportion="-4.245283" vertical-offset="5741" max-vertical-offset="9405">
               <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -46,7 +48,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="42" selection-start="6781" selection-end="6814" vertical-scroll-proportion="0.0" vertical-offset="4199" max-vertical-offset="4579">
+            <state line="221" column="42" selection-start="6781" selection-end="6814" vertical-scroll-proportion="-0.0" vertical-offset="4199" max-vertical-offset="4579">
               <folding />
             </state>
           </provider>
@@ -55,17 +57,43 @@
       <file leaf-file-name="CategoryLogic.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Amazon_Index/CategoryLogic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="33" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2090">
+            <state line="99" column="33" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0" vertical-offset="1691" max-vertical-offset="2090">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Amazon_Index/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="44" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.6554404" vertical-offset="754" max-vertical-offset="2280">
+            <state line="32" column="48" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2356">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommodityLogic.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="297" column="0" selection-start="8738" selection-end="8738" vertical-scroll-proportion="-10.4" vertical-offset="5383" max-vertical-offset="5757">
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commodity.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/commodity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="379" column="20" selection-start="8011" selection-end="8011" vertical-scroll-proportion="0.62716764" vertical-offset="6984" max-vertical-offset="8379">
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,10 +124,11 @@
         <option value="$PROJECT_DIR$/Amazon_Index/CategorySearcher.py" />
         <option value="$PROJECT_DIR$/Amazon_Index/InitData.py" />
         <option value="$PROJECT_DIR$/Amazon_Index/CategoryLogic.py" />
-        <option value="$PROJECT_DIR$/Amazon_Index/CommodityLogic.py" />
         <option value="$PROJECT_DIR$/Amazon_Index/Trendata.py" />
-        <option value="$PROJECT_DIR$/Amazon_Index/templates/category.html" />
         <option value="$PROJECT_DIR$/Amazon_Index/views.py" />
+        <option value="$PROJECT_DIR$/Amazon_Index/templates/category.html" />
+        <option value="$PROJECT_DIR$/Amazon_Index/CommodityLogic.py" />
+        <option value="$PROJECT_DIR$/Amazon_Index/templates/commodity.html" />
       </list>
     </option>
   </component>
@@ -195,7 +224,7 @@
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -539,22 +568,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25226587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31290323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="247" width="1366" height="243" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31290323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="247" width="1366" height="243" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -598,15 +627,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="5" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9234">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="221" column="42" selection-start="6781" selection-end="6814" vertical-scroll-proportion="0.0" vertical-offset="4199" max-vertical-offset="4579">
@@ -625,6 +645,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="97" column="5" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9234">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -660,7 +681,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="26" selection-start="2886" selection-end="2942" vertical-scroll-proportion="0.0" vertical-offset="2014" max-vertical-offset="2793" />
+        <state line="106" column="26" selection-start="2886" selection-end="2942" vertical-scroll-proportion="0.0" vertical-offset="2014" max-vertical-offset="2793">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/urls.py">
@@ -674,6 +699,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="97" column="5" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="6627" max-vertical-offset="7776">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -709,7 +735,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="26" selection-start="2886" selection-end="2942" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="2352" />
+        <state line="106" column="26" selection-start="2886" selection-end="2942" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="2352">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/urls.py">
@@ -723,6 +753,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="335" column="35" selection-start="9046" selection-end="9046" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7920">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -742,7 +773,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="74" selection-start="318" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="800" />
+        <state line="12" column="74" selection-start="318" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="800">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/Trendata.py">
@@ -775,6 +810,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="335" column="35" selection-start="9046" selection-end="9046" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7920">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -794,7 +830,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="74" selection-start="318" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="800" />
+        <state line="12" column="74" selection-start="318" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="800">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/Trendata.py">
@@ -827,6 +867,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="185" column="29" selection-start="3270" selection-end="3282" vertical-scroll-proportion="0.0" vertical-offset="2835" max-vertical-offset="7216">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -841,7 +882,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="34" selection-start="1005" selection-end="1019" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="800" />
+        <state line="40" column="34" selection-start="1005" selection-end="1019" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="800">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Amazon_Index/views.py">
@@ -867,6 +912,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="183" column="41" selection-start="3217" selection-end="3217" vertical-scroll-proportion="0.0" vertical-offset="3443" max-vertical-offset="7216">
           <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -894,29 +940,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="42" selection-start="6781" selection-end="6814" vertical-scroll-proportion="0.0" vertical-offset="3387" max-vertical-offset="3856">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="26" selection-start="2886" selection-end="2942" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="2352" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="255" selection-end="255" vertical-scroll-proportion="0.28836426" vertical-offset="0" max-vertical-offset="593" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/category.html">
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="441" column="44" selection-start="13483" selection-end="13483" vertical-scroll-proportion="-3.7735848" vertical-offset="8179" max-vertical-offset="9405">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="221" column="42" selection-start="6781" selection-end="6814" vertical-scroll-proportion="0.0" vertical-offset="3387" max-vertical-offset="3856">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -927,17 +959,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/CategoryLogic.py">
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="33" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2090">
+        <state line="32" column="48" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2356">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Amazon_Index/views.py">
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/CommodityLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="44" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.6554404" vertical-offset="754" max-vertical-offset="2280">
+        <state line="297" column="0" selection-start="8738" selection-end="8738" vertical-scroll-proportion="-10.4" vertical-offset="5383" max-vertical-offset="5757">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/CategoryLogic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="33" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0" vertical-offset="1691" max-vertical-offset="2090">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="314" column="37" selection-start="8423" selection-end="8429" vertical-scroll-proportion="-4.245283" vertical-offset="5741" max-vertical-offset="9405">
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#a#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Amazon_Index/templates/commodity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="379" column="20" selection-start="8011" selection-end="8011" vertical-scroll-proportion="0.62716764" vertical-offset="6984" max-vertical-offset="8379">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
