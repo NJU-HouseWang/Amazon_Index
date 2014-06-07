@@ -10,6 +10,7 @@
         width: 100%;
         position: relative;
         min-height: 600px;
+        min-width: 1000px;
         margin-top: 1px;
     }
 
@@ -60,6 +61,7 @@
         background-color: #013773;
         color: #FFFFFF;
         height: 70px;
+        min-width: 900px;
     }
 
     #category {
@@ -85,7 +87,8 @@
 
     #sortContainer {
 	padding-top: 5px;
-	width: 60%;
+	width: 600px;
+    height: 25px;
 	float: left;
     }
 
@@ -116,6 +119,7 @@
         color: #000000;
         text-decoration: none;
         padding-right: 10px;
+        min-width: 900px;
     }
 
     .commoditypic {
@@ -396,6 +400,7 @@
 <div class="frame" id="frame">
     <div class="layout" id="left">
         <div class="layout" id="leftContainer">
+            {% if result_list %}
             <div class="content" id="cateInfo">Here are statistics of this category:</div>
             <div class="piepiccontainer">
                 <div class="piepic" id="salespiepic"></div>
@@ -403,6 +408,7 @@
             <div class="piepiccontainer">
                 <div class="piepic" id="turnoverpiepic"></div>
             </div>
+            {% endif %}
         </div>
     </div>
     <div class="layout" id="top">
@@ -432,6 +438,9 @@
     </div>
     <div class="layout" id="center">
         <div class="layout" id="searchresult" style="width: 100%; height: 470px; overflow-y:scroll; overflow-x:hidden;">
+            {% if not result_list %}
+                <p style="text-align: center;">Couldn't find any accordant result, please re-search or select the category at the top of the page.</p>
+            {% endif %}
             {% block content %}
                 {% autopaginate result_list 10 %}
                 {% for result in result_list %}
