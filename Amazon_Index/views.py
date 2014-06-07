@@ -94,6 +94,7 @@ def commodity(request):
 		asin = request.GET['asin']
 		data = Trendata.get_commodity_data(asin)
 		info = CommodityLogic.get_commodity_info(data)
+		latest_price = info['commodity_latest_price']
 		star_count = CommodityLogic.get_star_count(data)
 		if info['commodity_name'] != "":
 			info['star_pic_width'] = int(8+29*float(info['commodity_avg_star']))
@@ -105,6 +106,7 @@ def commodity(request):
 		lowest_price = (price_info['lowest_price'])
 		highest_price = (price_info['highest_price'])
 		avg_price = (price_info['avg_price'])
+		
 		
 		#relative_commodities = (CommodityLogic.get_relative_commodities(asin))['commodity']
 		#relative_sales = (CommodityLogic.get_relative_commodities(asin))['sales']

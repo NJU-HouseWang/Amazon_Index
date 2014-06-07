@@ -88,7 +88,7 @@ html{
 	line-height:30px;
 }
 #left{
-	width:250px;
+	width:280px;
 	margin:0 auto;
 	position:absolute;   
 	top:100px; 
@@ -101,7 +101,7 @@ html{
 	margin:0 auto;
 	position:absolute;   
 	top:120px; 
-	left:720px;  
+	left:750px;  
 	height:200px;    
 	margin-top:0;
 }
@@ -145,7 +145,9 @@ html{
 	height:450px;
 	text-align:center;
 	position:relative;
-	background-color:gray;
+	border-style: none solid solid solid;
+	border-width:1px;
+	border-color:gray;
 }
 #sales_tab{
 	width: 650px;
@@ -153,14 +155,18 @@ html{
 	top:50px;
 	text-align:center;
 	position:relative;
-	background-color:green;
+	border-style: solid;
+	border-width:1px;
+	border-color:gray;
 }
 #stars_tab{
 	width: 400px;
 	height:450px;
 	text-align:center;
 	position:relative;
-	background-color:red;
+	border-style: none solid solid solid;
+	border-width:1px;
+	border-color:gray;
 }
 #emotion_tab{
 	width: 400px;
@@ -168,7 +174,9 @@ html{
 	top:50px;
 	text-align:center;
 	position:relative;
-	background-color:pink;
+	border-style: solid;
+	border-width:1px;
+	border-color:gray;
 }
 </style>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -356,22 +364,23 @@ html{
             text: 'Positive and Negative Words in Comments'
         },
         tooltip: {
-    	     pointFormat: '{series.name}: <b>{point.percentage}%</b>'
+    	     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         plotOptions: {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
+				         dataLabels: {
+                    enabled: false,
                     color: '#000000',
                     connectorColor: '#000000',
                     formatter: function() {
                         return  this.point.name +'</b>: '+ this.percentage /100* ({{positive_count}}+{{negative_count}});
                     }
                 }
+       
             }
-        }
+        },
         series: [{
             type: 'pie',
             name: 'Percentage',
@@ -393,12 +402,12 @@ html{
     </div>
     <div class="content" id="commodity_info">
     	<div class="content" id="name">
-        <a id = "name_" href="http://www.baidu.com/" target="_blank">{{info.commodity_name}}</a>
+        <a id = "name_" href="http://www.amazon.com/gp/product/{{asin}}/" target="_blank">{{info.commodity_name}}</a>
         </div>
         <div class="layout" id = "detail">
             <div class="layout" id="left">
                 <div class="content" id="avg_price">
-                Avg Price: ${{info.commodity_avg_price}}
+                Latest Price: ${{latest_price}}
                 </div>
                 <div class="content" id="sales">
                 Sales: {{info.commodity_sales}}
@@ -419,13 +428,13 @@ html{
 </div>
 <div class="layout" id="bottom">
 	<div class="layout" id="left_tab">
-		<div class="content" id="price_tab" style="min-width:650px;height:450px;">
+		<div class="content" id="price_tab" style="min-width:640px;height:440px;">
 		</div>
-		<div class="content" id="sales_tab" style="min-width:650px;height:450px;">
+		<div class="content" id="sales_tab" style="min-width:640px;height:440px;">
 		</div>
 	</div>
 	<div class="layout" id="right_tab">
-		<div class="content" id="stars_tab" style="min-width:400px;height:450px;">
+		<div class="content" id="stars_tab" style="min-width:390px;height:440px;">
 		</div>
 		<div class="content" id="emotion_tab">
 		</div>

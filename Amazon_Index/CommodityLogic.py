@@ -43,6 +43,7 @@ def get_commodity_info(data):
             tag += commodity_tags[i][1] + " "
 
     commodity_info['commodity_tags'] = tag
+    commodity_info['commodity_latest_price'] = get_latest_price(data)
 
     return commodity_info
 
@@ -222,34 +223,37 @@ def get_relative_commodities(asin):
 
 
 def get_sales_info(data):
-    sales_info = {}
-    time_list = []
-    time_list1 = []
-    sales_list = []
-    review = data['review']
+	sales_info = {}
+	time_list = []
+	time_list1 = []
+	sales_list = []
+	review = data['review']
 
-    for each_review in review:
-        time_list1 += [each_review['publishTime'].split(' ')[0][0:7]]
-    for each_time in time_list1:
-        if each_time not in time_list:
-            time_list += [each_time]
-    time_list.sort()
+	for each_review in review:
+		time_list1 += [each_review['publishTime'].split(' ')[0][0:7]]
+	for each_time in time_list1:
+		if each_time not in time_list:
+			time_list += [each_time]
+	time_list.sort()
+	if len(time_list1)>0:
+		sales_info['first_sales_time'] = time_list[0]
+		sales_info['latest_sales_time'] = time_list[-1]
+	else:
+		sales_info['first_sales_time'] = '0000-00'
+		sales_info['latest_sales_time'] = '0000-00'
 
-    sales_info['first_sales_time'] = time_list[0]
-    sales_info['latest_sales_time'] = time_list[-1]
+	for each_time in time_list:
+		sales = 0
+		for each_review in review:
+			if each_review['publishTime'].startswith(each_time):
+				sales = sales + 1
+		sales_list += [sales]
 
-    for each_time in time_list:
-        sales = 0
-        for each_review in review:
-            if each_review['publishTime'].startswith(each_time):
-                sales = sales + 1
-        sales_list += [sales]
-
-    for i in range(0, len(time_list)):
-        time_list[i] = time_list[i].replace('-', '', )
-    sales_info['time_list'] = time_list
-    sales_info['sales_list'] = sales_list
-    return sales_info
+	for i in range(0, len(time_list)):
+		time_list[i] = time_list[i].replace('-', '', )
+	sales_info['time_list'] = time_list
+	sales_info['sales_list'] = sales_list
+	return sales_info
 
 
 def read_dic(path):
