@@ -48,9 +48,15 @@ def category(request):
 
     result_list = []
     for single_cate in result_cate_list:
-        asin_list = Trendata.get_category_asin_list(single_cate)
+        try:
+            asin_list = Trendata.get_category_asin_list(single_cate)
+        except IOError:
+            continue
         for single_asin in asin_list:
-            data = Trendata.get_commodity_data(single_asin)
+            try:
+                data = Trendata.get_commodity_data(single_asin)
+            except IOError:
+                continue
             info = CommodityLogic.get_commodity_info(data)
             if info['commodity_name'] != "":
                 info['star_pic_width'] = int(8 + 29 * float(info['commodity_avg_star']))
